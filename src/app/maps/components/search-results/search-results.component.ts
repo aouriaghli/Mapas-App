@@ -24,8 +24,8 @@ export class SearchResultsComponent {
   }
 
   flyTo( place: Feature){
-    const lng = place.properties['coordinates'].longitude;
-    const lat = place.properties['coordinates'].latitude;
+    const [lng, lat] = [place.properties['coordinates'].longitude,
+                       place.properties['coordinates'].latitude];
     this.selectedId = place.id;
     this.mapService.flyTo([lng, lat]);
   }
