@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MapService, PlacesService } from '../../services';
-import { Feature } from '../../interfaces/places';
+import { Feature, Coordinates } from '../../interfaces/places';
 
 @Component({
   selector: 'app-search-results',
@@ -28,5 +28,12 @@ export class SearchResultsComponent {
                        place.properties['coordinates'].latitude];
     this.selectedId = place.id;
     this.mapService.flyTo([lng, lat]);
+  }
+
+  getDirections(place:Feature){
+
+    const start = this.placesServices.userLocation!;
+    const end : [number, number] = [place.properties['coordinates'].longitude, place.properties['coordinates'].latitude];
+    this.mapService.getRouteBetweenPoints(start, end);
   }
 }

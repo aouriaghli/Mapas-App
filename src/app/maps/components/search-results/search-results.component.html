@@ -16,7 +16,9 @@
      {{ place.properties['place_formatted'] }}
     </p>
     <button class="btn btn-sm"
-    [ngClass]="place.id === selectedId? 'btn-outline-light': 'btn-outline-primary'">
+    [ngClass]="place.id === selectedId? 'btn-outline-light': 'btn-outline-primary'"
+    (click)="getDirections( place)"
+    >
      Direcciones
     </button>
   </li>
