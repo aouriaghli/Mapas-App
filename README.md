@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 npm install --save mapbox-gl
 npm i --save-dev @types/mapbox-gl
+
+
+al hacer npm run build, se excede el tamaño maximo. por tanto hay que hacer algo para cambiarlo, o pasamos mapbox por cdn o forzamos el cambio de budget en el angular.json.
